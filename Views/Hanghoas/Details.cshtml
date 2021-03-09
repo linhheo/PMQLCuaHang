@@ -1,0 +1,43 @@
+﻿@model BOHOPUB2HAND.Models.Hanghoa
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hanghoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenHangHoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHangHoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongTonKho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTonKho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HangHoaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BOHOPUB2HAND.Models.Khachhang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách khách hàng</h2>
+
+<p>
+    @Html.ActionLink("Thêm khách hàng mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHangID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKhachHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoDienThoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.KhachHangID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenKhachHang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoDienThoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.KhachHangID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.KhachHangID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.KhachHangID })
+    </td>
+</tr>
+}
+
+</table>

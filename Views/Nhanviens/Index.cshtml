@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BOHOPUB2HAND.Models.Nhanvien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Danh sách Nhân viên</h2>
+
+<p>
+    @Html.ActionLink("Thêm Nhân viên mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVienID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenNhanVien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChucVu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoDienThoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTK)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.NhanVienID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenNhanVien)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ChucVu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoDienThoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoTK)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.NhanVienID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.NhanVienID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.NhanVienID })
+    </td>
+</tr>
+}
+
+</table>
